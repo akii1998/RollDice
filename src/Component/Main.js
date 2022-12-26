@@ -47,15 +47,15 @@ const Main = () => {
           <Stack
             justify="center"
             align="center"
-            maxW="1300px"
+            maxW="1200px"
             mx="auto"
             h="100vh"
           >
             <Heading
               as="h1"
               color={error ? "red" : "black"}
-              fontSize="6xl"
-              mb="8"
+              fontSize="60px"
+              mb="10"
             >
               {error ? error : "Select the Lucky Number"}
             </Heading>
@@ -64,44 +64,46 @@ const Main = () => {
                 <Flex
                   justify="center"
                   align="center"
-                  h="50px"
-                  w="50px"
+                  h="60px"
+                  w="60px"
                   bg={selectedNumber === value ? "lime" : "grey"}
                   color="white"
-                  fontSize="2xl"
+                  fontSize="4xl"
                   key={value}
                   mr={4}
                   borderRadius="md"
+                  cursor={"pointer"}
                   onClick={() => onNumberClicked(value)}
                 >
                   {value}
                 </Flex>
               ))}
             </Flex>
-            <Box h="150px" width="150px" onClick={genRandomNo}>
+            <Box h="150px" width="150px"
+             _hover={{ bg: "lime" }}     onClick={genRandomNo}>
               
-              <Image src={`./image/dices/dice${dice}.png`} />
+              <Image src={`./image/dices/dice${dice}.png`}  />
             </Box>
 
-            <Text as="p" fontSize="xl">
+            <Text as="p" fontSize="60px">
               Click on dice to roll
             </Text>
 
             <Text
               color={score > 0 ? "green" : "red"}
-              fontSize="8xl"
+              fontSize="60px"
               fontWeight="bold"
             >
               {score}
             </Text>
-            <Text fontSize="6xl" fontWeight="bold">
+            <Text fontSize="50px" fontWeight="bold">
               Total Score
             </Text>
-            <Button onClick={() => setScore(0)}>Reset Score</Button>
+            <Button  fontSize={"30px"} onClick={() => setScore(0)}>Reset Score</Button>
           </Stack>
           <Stack maxW="900px" mx="auto">
-            <Heading as="h2">Game Rules:-</Heading>
-            <List>
+            <Heading as="h2" fontSize={"30px"}>Game Rules:-</Heading>
+            <List fontSize={"25px"}>
               <ListItem>Select Number any number</ListItem>
               <ListItem>Click on dice image to roll it</ListItem>
               <ListItem>
@@ -118,13 +120,14 @@ const Main = () => {
         <Flex justify="center" align="center">
           <Image width="50%" src="../image/dice.png" />
           <Stack>
-            <Heading fontSize="7xl" as="h1">
+            <Heading fontSize="50px" as="h1">
               {" "}
               The Dice Game
             </Heading>
             <Button
               alignSelf="flex-end"
               bg="black"
+              fontSize={"35px"}
               color="white"
               _hover={{ bg: "grey" }}
               onClick={startGameHandler}
